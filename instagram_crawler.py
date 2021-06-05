@@ -111,7 +111,7 @@ class ig_photo_crawler():
             print(file_name)
             req.urlretrieve(ele['display_url'], file_name)
             print("time sleeping...")
-            time.sleep(random.randrange(10,30))
+            time.sleep(random.randrange(3,5))
             i = i+1 #同一個shotcode有多個貼圖
         return
 
