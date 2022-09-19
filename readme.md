@@ -10,7 +10,8 @@ $ pip install -r requirements.txt
 $ python3 instagram_crawler.py -s {sessionid_list} -a {account_name} -n {num_post}
 ```
 
-* `sessionid_list`:自己IG帳號的session_id，如果您有小號，可以自行輸入多組session_id。[👉session id 獲取方式](https://help.captaindata.co/article/112-find-instagram-session-id)
+* `sessionid_list`:自己IG帳號的session_id，如果您有小號，可以自行輸入多組session_id。 <br>
+[👉session id 獲取方式](https://help.captaindata.co/article/112-find-instagram-session-id)
 
 * `account_name`:欲爬取的目標IG帳號名稱
 
