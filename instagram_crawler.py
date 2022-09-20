@@ -17,7 +17,7 @@ class ig_photo_crawler():
         self.num_post = num_post
         
     def get_ig_id(self, acct_name):
-        url = f"https://www.instagram.com/{acct_name}?__a=1"
+        url = f"https://www.instagram.com/{acct_name}/?__a=1&__d=dis"
         print(url)
         headers = {"user-agent":self.agent,"cookie":"sessionid=%s"}
         headers['cookie'] = headers['cookie'] % self.sid[random.randrange(0,len(self.sid))]
