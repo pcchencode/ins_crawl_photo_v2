@@ -2,7 +2,6 @@ import urllib
 import urllib.request as req
 import os, time, sys, requests, json, random ,bs4, re
 from datetime import datetime, timedelta
-import pandas as pd
 import argparse
 
 class ig_photo_crawler():
@@ -19,13 +18,12 @@ class ig_photo_crawler():
     def get_ig_id(self, acct_name):
         url = f"https://www.instagram.com/{acct_name}/?__a=1&__d=dis"
         print(url)
-        headers = {"user-agent":self.agent,"cookie":"sessionid=%s"}
-        headers['cookie'] = headers['cookie'] % self.sid[random.randrange(0,len(self.sid))]
+        headers = {"user-agent":self.agent,"cookie":f"sessionid={self.sid}"}
         print(headers['cookie'])
-        Url = req.Request(url, headers=headers)
-        with req.urlopen(Url) as response:
-            data = response.read().decode("utf-8")
-        soup = bs4.BeautifulSoup(data, "html.parser")
+        s = requests.session()
+        r = s.get(url, headers=headers)
+        print(r.text)
+        soup = bs4.BeautifulSoup(r.text, "html.parser")
         js = json.loads(soup.text)
         ig_id = re.search('(?<=profilePage_).*', js['logging_page_id'], re.IGNORECASE).group(0)
         return ig_id
