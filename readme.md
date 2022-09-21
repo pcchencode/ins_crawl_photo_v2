@@ -10,14 +10,14 @@ $ pip install -r requirements.txt
 $ python3 instagram_crawler.py -s {sessionid_list} -a {account_name} -n {num_post}
 ```
 
-* `sessionid_list`:自己IG帳號的session_id，如果您有小號，可以自行輸入多組session_id。 
+* `sessionid_list`:自己IG帳號的session_id，如果您有小號，可以自行輸入多組session_id。<br> 
 [👉 session id 獲取方式](https://help.captaindata.co/article/112-find-instagram-session-id)
 
 * `account_name`:欲爬取的目標IG帳號名稱
 
 * `num_post`:欲爬取的貼文數(從最新的貼文開始)
 
-* 範例：欲爬取[dcard.tw](https://www.instagram.com/dcard.tw/?hl=en)，前 5 篇貼文的照片
+* 範例：欲爬取[dcard.tw](https://www.instagram.com/dcard.tw/?hl=en)，前 5 篇貼文的照片<br>
 `$ python3 instagram_crawler.py -s {your_sessionid} -a dcard.tw -n 5`
 
 
